@@ -1,37 +1,73 @@
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 main {
-    display: grid;
-    grid-template-columns: 25% auto;
+  display: grid;
+  grid-template-columns: (repeat(3, 1fr));
+  gap: 5px;
 }
+
 header {
-    background-color: rgb(162, 162, 230);
-    text-align: center;
-    height: 75px;
+  background-color: rgb(162, 162, 230);
+  text-align: center;
+  height: 75px;
 }
-#searchInput {
-    margin-left: 15px;
-    padding: 10px;
+#searchText {
+  width: 100%;
+  padding: 10px;
 }
 .search {
-    border-bottom-style: solid;
+  padding: 5px;
+  margin: 5px;
+  grid-column: 1;
+  grid-row: 1;
 }
-   
-.cities {
-    display: flex;
-    flex-flow: column;
+
+.divider {
+  border-bottom: 3px solid black;
+  margin-top: 10px;
+  width: 100%;
 }
 
 button {
-    display: flex;    
+  display: block;
+  width: 100%;
+}
+
+.cityInput {
+  margin-top: 10px;
 }
 
 .resultsSection {
-    margin-right: 500px;
+  margin-right: 500px;
+  grid-column: 2;
 }
 .results {
-    border-style: solid;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin: 10px;
+}
+
+.fiveDayForecast {
+  display: flex;
+  flex-direction: row;
+}
+
+.fiveDayForecast div {
+  margin: 10px;
+  background-color: rgb(24, 4, 99);
+  padding: 10px;
+}
+
+#fiveDayTitle {
+  display: none;
+  padding: 10px;
+}
+
+.fiveDayForecast h1,
+.fiveDayForecast p {
+  color: white;
 }

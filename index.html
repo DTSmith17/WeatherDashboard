@@ -1,44 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
     <title>Weather Dashboard</title>
-</head>
-<body>
-    <Header><h1 id="title">Weather Dashboard</h1></Header>
+  </head>
+  <body>
+    <header><h1 id="title">Weather Dashboard</h1></header>
     <main>
-        <div id='searchInput' class="search">
-            <h1>Search For a City:</h1>
-            <input id="searchText" type="text">
-            <button class='cityInput' id="searchButton">Search</button>
-        </div>
-        
-        <div class="resultsSection">
-            <div class="results">
-                <h1>Hello</h1>
-            </div>
-    
-            <div class="5DayForecast">
-                <h1>5-Day Forcast:</h1>
-            </div>
-        </div>
-        <div class='cityInputDiv' id='searchInput' class="cities">
-            <button class='cityInput'>Atlanta</button>
-            <button class='cityInput'>Denver</button>
-            <button class='cityInput'>Seattle</button>
-            <button class='cityInput'>San Francisco</button>
-            <button class='cityInput'>Orlando</button>
-            <button class='cityInput'>New York</button>
-            <button class='cityInput'>Chicago</button>
-            <button class='cityInput'>Austin</button>
-        </div>
-    
+      <div id="searchInput" class="search">
+        <h1>Search For a City:</h1>
+        <input id="searchText" type="text" placeholder="Search City" />
+        <button class="cityInput" id="searchButton">Search</button>
+        <div class="divider"></div>
+        <button class="cityInput">Atlanta</button>
+        <button class="cityInput">Denver</button>
+        <button class="cityInput">Seattle</button>
+        <button class="cityInput">San Francisco</button>
+        <button class="cityInput">Orlando</button>
+        <button class="cityInput">New York</button>
+        <button class="cityInput">Chicago</button>
+        <button class="cityInput">Austin</button>
+      </div>
 
+      <div class="resultsSection">
+        <div class="results"></div>
+        <div id="fiveDayTitle"><h1>5 Day Forecast:</h1></div>
+        <div class="fiveDayForecast"></div>
+      </div>
     </main>
-
-
-</body>
-<script src="./script.js"></script>
+  </body>
+  <script src="./script.js"></script>
 </html>
