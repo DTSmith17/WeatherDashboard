@@ -1,5 +1,4 @@
 const searchButtons = document.getElementsByClassName("cityInput");
-
 //getApi- Pass in the city name and make a fetch request to get the forecast for that city
 async function getApi(cityName) {
   const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=56e36f99ead2fd7da124d40234c7f905&units=imperial`;
@@ -57,16 +56,16 @@ function generateWeatherCardHtml(data, cityName) {
 //
 for (const button of searchButtons) {
   let cityName;
-  const searchButton = document.querySelector()
-  // checking to see of button has a valid City name in the ID
-
-  if (button.id === "searchButton") {
-    cityName = document.getElementById("searchText").value.trim();
-    //define as its own var and equal it to city name and console log it, button id log
-  } else {
+  console.log(button);
+  if (button.id !== "searchButton") {
     cityName = button.textContent;
+    button.addEventListener("click", function () {
+      getApi(cityName);
+    });
   }
-  button.addEventListener("click", function () {
-    getApi(cityName);
-  });
+  console.log(cityName);
 }
+document.getElementById("searchButton").addEventListener("click", function () {
+  cityName = document.getElementById("searchText").value;
+  getApi(cityName);
+});
