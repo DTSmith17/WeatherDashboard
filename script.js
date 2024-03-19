@@ -53,19 +53,34 @@ function generateWeatherCardHtml(data, cityName) {
   <p>Humidity: ${data.main.humidity}%</p></div>`;
 }
 
-//
-for (const button of searchButtons) {
-  let cityName;
-  console.log(button);
-  if (button.id !== "searchButton") {
-    cityName = button.textContent;
-    button.addEventListener("click", function () {
+let searchHistory = [];
+function addToSearchHistory(cityName) {
+  if (!searchHistory.includes(cityName)) {
+    searchHistory.push(cityName);
+    updateSearchHistory();
+  }
+}
+
+// Function to update the search history buttons
+function updateSearchHistory() {
+  const searchHistoryContainer = document.getElementById("searchHistory");
+  searchHistoryContainer.innerHTML = "";
+
+  searchHistory.forEach((cityName) => {
+    const button = document.createElement("button");
+    button.textContent = cityName;
+    button.addEventListener("click", () => {
+      cityName = button.textContent;
       getApi(cityName);
     });
-  }
-  console.log(cityName);
+    searchHistoryContainer.appendChild(button);
+  });
 }
+
+// Call this function whenever a city is searched and needs to be added to the search history
+
 document.getElementById("searchButton").addEventListener("click", function () {
   cityName = document.getElementById("searchText").value;
   getApi(cityName);
+  addToSearchHistory(cityName);
 });

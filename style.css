@@ -5,7 +5,7 @@
 
 main {
   display: grid;
-  grid-template-columns: (repeat(3, 1fr));
+  grid-template-columns: auto 2fr;
   gap: 5px;
 }
 
@@ -21,8 +21,6 @@ header {
 .search {
   padding: 5px;
   margin: 5px;
-  grid-column: 1;
-  grid-row: 1;
 }
 
 .divider {
@@ -36,24 +34,26 @@ button {
   width: 100%;
 }
 
-.cityInput {
+#searchHistory {
   margin-top: 10px;
 }
 
-.resultsSection {
-  margin-right: 500px;
-  grid-column: 2;
+.cityInput,
+#searchHistory button {
+  margin-top: 10px;
 }
+
 .results {
   display: flex;
   flex-wrap: wrap;
-  padding: 20px;
+  padding: 30px;
   margin: 10px;
 }
 
 .fiveDayForecast {
   display: flex;
   flex-direction: row;
+  padding: 20px;
 }
 
 .fiveDayForecast div {
@@ -64,7 +64,7 @@ button {
 
 #fiveDayTitle {
   display: none;
-  padding: 10px;
+  text-indent: 40px;
 }
 
 .fiveDayForecast h1,
